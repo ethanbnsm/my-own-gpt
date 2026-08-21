@@ -10,15 +10,12 @@ class Solution:
         b = 0.0
 
         for _ in range(epochs):
-            # Forward pass
             y_hat = X @ w + b
             error = y_hat - y
 
-            # Compute gradients of MSE loss
             dw = (2.0 / n) * (X.T @ error)
             db = (2.0 / n) * np.sum(error)
 
-            # Update weights
             w = w - lr * dw
             b = b - lr * db
 
